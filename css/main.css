@@ -1,0 +1,10 @@
+body {
+  background-image: url("../img/orange-sunset-1.jpg");
+}
+
+h1 {
+  color: white;
+  font-size: -webkit-xxx-large;
+  text-align: center;
+  padding-top: 50;
+}
