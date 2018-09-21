@@ -1,0 +1,66 @@
+<html>
+<head>
+
+
+<link rel="stylesheet" type="text/css" href="../js/semantic-ui/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="../js/semantic-ui/semantic.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP5gBEPUSh1INQAvxnaJtcLWNTcTo5srA&v=3.exp&sensor=false&libraries=visualization"></script>
+<script src="crime_2012_december.json" ></script>
+<script src="crime_boston_2018.json" ></script>
+<script type="text/javascript">
+
+function chicagoPoint(crime){
+    var point = {};
+//    console.log(crime);
+    point.latitude = crime[26];
+    point.longitude = crime[28];
+
+    return point;
+}
+
+var chicagoPoints = chicago.data.map(chicagoPoint);
+
+function bostonPoint(crime){
+  var point = {};
+  //console.log(crime);
+  point.latitude = crime[14];
+  point.longitude = crime[15];
+
+  return point;
+}
+var bostonPoints = boston.data.map(bostonPoint);
+
+</script>
+<script src="../js/heatmap/heatmap.js"></script>
+</head>
+<body>
+  <h1>Welcome to Red Dawn</h1>
+  <div class="ui menu">
+    <a class=" item" href="../index.html">
+      Home
+    </a>
+    <div class="ui simple dropdown item">
+      Homeworks
+      <i class="dropdown icon"></i>
+      <div class="menu active">
+          <a class="item" href="hmw2.html">Heatmaps</a>
+     </div>
+  </div>
+</div>
+  <div class="ui fluid container simple-container heatmap">
+  <h2>Crime in Chicago</h2>
+  <div class="map" id="map-canvas-chicago" style="height:600px;width:800px"></div>
+  <div class="ui divider"></div>
+  <h2>Crime in Boston</h2>
+  <div class="map" id="map-canvas-boston" style="height:600px;width:800px"></div>
+</div>
+
+</body>
+</html>

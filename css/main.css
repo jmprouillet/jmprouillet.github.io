@@ -8,3 +8,15 @@ h1 {
   text-align: center;
   padding-top: 50;
 }
+
+.simple-container {
+  background: white;
+}
+.heatmap {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.map {
+  display: inline-flex;
+}
